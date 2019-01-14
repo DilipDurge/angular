@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Interstellar Transport System</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Interstellar Transport System, find the shortest path between the locations (source & destination)">
+		<meta name="keywords" content="angularjs, shortest path">
+		<meta name="author" content="Dilip">
+		<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+		<style>
+			.close {position: relative;top: -2px;right: -2px;color: inherit;-webkit-appearance: none;padding: 0;
+			cursor: pointer;background: 0 0;border: 0;}
+			[ng\:cloak], [ng-cloak], .ng-cloak {display: none !important;}
+		</style>
+	</head>
+<body ng-app="angularShortestPath">
+	<div class="container">
+		<h1>Interstellar Transport System</h1>
+		<p>Enter locations (source & destination) and find the shortest path between them.<p>
+		
+		<div ng-controller="graphController" style="margin-bottom:10px;">
+			<div class="form-group">
+				<label for="graph">Graph (Vertices, Edges, Weights)</label>
+				<div id="graph" class="alert alert-info">{{graph}}</div>
+			</div>
+			
+			<div class="form-group">
+				<label for="startLocation">Source Location</label>
+				<input type="text" ng-model="startLocation" class="form-control" id="startLocation" placeholder="Enter the Source location">
+			</div>
+			<!--div class="alert alert-info" ng-cloak ng-show="startLocation" role="alert">{{startLocation.formatted_address}}</div-->
+						
+			<div class="form-group">
+				<label for="endLocation">Destination Location</label>
+				<input type="text" ng-model="endLocation" class="form-control" id="endLocation" placeholder="Enter the destination location">
+			</div>
+			<!--div class="alert alert-info" ng-show="endLocation" role="alert" ng-cloak>{{endLocation.formatted_address}}</div-->
+			<button ng-disabled="!startLocation || !endLocation" type="button" class="btn btn-primary" ng-click="calculate()">Calculate</button>
+			
+			<div class="container">
+				<h3><b>Total Distance : {{totalDistance}}</b></h3>
+				<table class="table table-striped">
+					<tr>
+						<td>Path</td>
+						<td>Shortest Route</td>
+					</tr>
+					<tr>
+						<td>{{paths}}</td>
+						<td>{{shortestRoute}}</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+			
+	</div>
+	
+	<script src="lib/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+	<script src="lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="lib/angular/angular.min.js" type="text/javascript"></script>
+	<script src="js/app.js" type="text/javascript"></script>
+</body>
+</html>
