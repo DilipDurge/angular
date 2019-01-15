@@ -113,10 +113,12 @@ function Graph(){
 	this.addVertex('H', {G: 3});
 	this.addVertex('I', {Z: 3, J: 8});
 	this.addVertex('J', {R: 3});
-	this.addVertex('K', {T: 5});
-	this.addVertex('L', {U: 4});
-	this.addVertex('M', {U: 3});
-	this.addVertex('N', {X: 8});
-	this.addVertex('O', {P: 3, L: 4});
-}
+	this.addVertex('L', {T: 4});
+	this.addVertex('N', {T: 3});
+	this.addVertex('O', {U: 8, S: 6});
+	this.addVertex('P', {U: 3, R: 4});
+	this.addVertex('Q', {X: 5, Y: 9});
+	this.addVertex('S', {T: 8});
+	this.addVertex('Y', {Z: 9});
+	}
 });
